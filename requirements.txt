@@ -1,4 +1,0 @@
-pandas
-requests
-time
-xml.etree.ElementTree

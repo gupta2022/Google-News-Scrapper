@@ -68,16 +68,20 @@ def get_news(search_term, data_filter=None):
     # adjust the date column
     df.date = pd.to_datetime(df.date, unit='ns')
     # for saving purpose uncomment the below
-    df.to_csv(f'{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
+    df.to_csv(f'bribery/{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
     return df
 
 if __name__ == "__main__":
-    start = time.time()
-    search_term = str(input('Enter your search term here: '))
-    for i in range(1,40) :
-        data = get_news(search_term, data_filter=(90*i))
-    end = time.time()-start
-    print("Execution time", end)
+    
+    list_of_topics=['accused of bribery','found guilty in bribery','arrested for bribery','accused of bribery in india','found guilty in bribery in india','arrested for bribery in india']
+    for search_term in list_of_topics:
+        #search_term = str(input('Enter your search term here: '))
+        print(search_term)
+        start = time.time()
+        for i in range(0,40):
+            data = get_news(search_term, data_filter=(90*i))
+        end = time.time()-start
+        print("Execution time", end)
 
 #get_news('bribery in corporations','this_year')
 #https://news.google.com/rss/search?q=bribery%20in%20india+after%3A2016-10-18+before%3A2016-10-25&hl=en-US&gl=US&ceid=US%3Aen
