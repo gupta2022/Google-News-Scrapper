@@ -68,12 +68,12 @@ def get_news(search_term, data_filter=None):
     # adjust the date column
     df.date = pd.to_datetime(df.date, unit='ns')
     # for saving purpose uncomment the below
-    df.to_csv(f'scam/{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
+    df.to_csv(f'defaulter/{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
     return df
 
 if __name__ == "__main__":
     
-    list_of_topics=['accused of scam','found guilty in scam','arrested for scam','accused of scam in india','found guilty in scam in india','arrested for scam in india']
+    list_of_topics=['accused of defaulting ','found guilty for defaulting ','arrested for defaulting ','accused of defaulting  in india','found guilty in defaulting  in india','arrested for defaulting  in india']
     for search_term in list_of_topics:
         #search_term = str(input('Enter your search term here: '))
         print(search_term)
@@ -83,5 +83,5 @@ if __name__ == "__main__":
         end = time.time()-start
         print("Execution time", end)
 
-#get_news('scam in corporations','this_year')
-#https://news.google.com/rss/search?q=scam%20in%20india+after%3A2016-10-18+before%3A2016-10-25&hl=en-US&gl=US&ceid=US%3Aen
+#get_news('defaulting  in corporations','this_year')
+#https://news.google.com/rss/search?q=defaulting %20in%20india+after%3A2016-10-18+before%3A2016-10-25&hl=en-US&gl=US&ceid=US%3Aen
