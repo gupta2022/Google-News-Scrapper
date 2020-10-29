@@ -68,12 +68,12 @@ def get_news(search_term, data_filter=None):
     # adjust the date column
     df.date = pd.to_datetime(df.date, unit='ns')
     # for saving purpose uncomment the below
-    df.to_csv(f'defaulter/{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
+    df.to_csv(f'defamation/{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
     return df
 
 if __name__ == "__main__":
     
-    list_of_topics=['accused of defaulting ','found guilty for defaulting ','arrested for defaulting ','accused of defaulting  in india','found guilty in defaulting  in india','arrested for defaulting  in india']
+    list_of_topics=['accuse for defaming ','accissed of defaming ','to face charges for defaming','file defamation case against']
     for search_term in list_of_topics:
         #search_term = str(input('Enter your search term here: '))
         print(search_term)
