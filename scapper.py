@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET # built in library
 
 def clean_url(searched_item,data_filter):
     """
+    
     OUTPUT : url to be fecthed for the searched_item and data_filter
      ---------------------------------------------------
     Parameters: 
@@ -15,6 +16,7 @@ def clean_url(searched_item,data_filter):
     'this_year' - news released in this year
     number : int/str input for number of days ago
     or '' blank to get all data
+    
     """
     x =pd.datetime.today()
     today =str(x)[:10]
@@ -68,17 +70,17 @@ def get_news(search_term, data_filter=None):
     # adjust the date column
     df.date = pd.to_datetime(df.date, unit='ns')
     # for saving purpose uncomment the below
-    df.to_csv(f'defamation/{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
+    df.to_csv(f'{search_term}_news.csv',mode ='a', encoding='utf-8-sig' , index=False)
     return df
 
 if __name__ == "__main__":
     
-    list_of_topics=['accuse for defaming ','accissed of defaming ','to face charges for defaming','file defamation case against']
+    list_of_topics=["agriculture on mars reseach papers"]
     for search_term in list_of_topics:
         #search_term = str(input('Enter your search term here: '))
         print(search_term)
         start = time.time()
-        for i in range(0,40):
+        for i in range(0,5):
             data = get_news(search_term, data_filter=(90*i))
         end = time.time()-start
         print("Execution time", end)
