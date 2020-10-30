@@ -66,6 +66,7 @@ SecretStorage==2.3.1
 simplejson==3.16.0
 six==1.14.0
 systemd-python==234
+tk==0.1.0
 toml==0.10.1
 ubuntu-advantage-tools==20.3
 ubuntu-drivers-common==0.0.0
