@@ -8,7 +8,8 @@ def file_opener():
    input = filedialog.askopenfile(initialdir="/home/gaurav/Desktop")
    print(type(input))
    print(input.name)
-   base.destroy()
+   #base.destroy()
+   
    for i in input:
       print(i)
 # Button label
